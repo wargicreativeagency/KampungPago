@@ -5,10 +5,10 @@ const generalMessage = 'Halo Kampung Pago, saya ingin informasi dan reservasi. M
 const icon = (paths) => `<svg viewBox="0 0 24 24" aria-hidden="true">${paths}</svg>`;
 const services = [
   { name: 'Hotel', description: 'Pilihan menginap untuk waktu istirahat dan kebersamaan Anda.', cta: 'Tanya Kamar', message: 'Halo Kampung Pago, saya ingin menanyakan ketersediaan dan reservasi kamar hotel.', icon: '<path d="M3 20V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v11M3 15h18M6 11h4a2 2 0 0 1 2 2v2H4v-2a2 2 0 0 1 2-2ZM14 11h4a2 2 0 0 1 2 2v2h-8v-2a2 2 0 0 1 2-2Z"/>' },
-  { name: 'Restaurant (Traditional food)', description: 'Nikmati hidangan tradisional bersama keluarga dan orang terdekat.', cta: 'Tanya Restoran', message: 'Halo Kampung Pago, saya ingin informasi restoran dan hidangan tradisional.', icon: '<path d="M3 2v7a4 4 0 0 0 4 4h1V2M6 2v20M20 2v20M20 2c-3 2-4 5-4 9h4"/>' },
-  { name: 'Meeting rooms', description: 'Ruang untuk kebutuhan pertemuan dan kegiatan kelompok.', cta: 'Tanya Meeting Room', message: 'Halo Kampung Pago, saya ingin informasi meeting room untuk kegiatan kelompok.', icon: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M8 9h8M8 13h5"/>' },
-  { name: 'Swimming pools', description: 'Lengkapi waktu bersama dengan aktivitas di kolam renang.', cta: 'Tanya Kolam Renang', message: 'Halo Kampung Pago, saya ingin informasi fasilitas kolam renang.', icon: '<path d="M2 17c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1M3 12c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1"/><path d="M7 9V5a2 2 0 1 1 4 0M17 9V5a2 2 0 1 1 4 0"/>' },
-  { name: 'Outbond Arena', description: 'Area aktivitas bersama untuk keluarga, komunitas, atau tim.', cta: 'Tanya Outbond', message: 'Halo Kampung Pago, saya ingin informasi kegiatan dan fasilitas Outbond Arena.', icon: '<path d="M12 22v-8M5 22h14M12 14 5 7l7-5 7 5-7 7ZM5 7l7 2 7-2"/>' },
+  { name: 'Restaurant (Traditional Food)', description: 'Nikmati hidangan tradisional bersama keluarga dan orang terdekat.', cta: 'Tanya Restoran', message: 'Halo Kampung Pago, saya ingin informasi restoran dan hidangan tradisional.', icon: '<path d="M3 2v7a4 4 0 0 0 4 4h1V2M6 2v20M20 2v20M20 2c-3 2-4 5-4 9h4"/>' },
+  { name: 'Meeting Rooms', description: 'Ruang untuk kebutuhan pertemuan dan kegiatan kelompok.', cta: 'Tanya Meeting Room', message: 'Halo Kampung Pago, saya ingin informasi meeting room untuk kegiatan kelompok.', icon: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M8 9h8M8 13h5"/>' },
+  { name: 'Swimming Pools', description: 'Lengkapi waktu bersama dengan aktivitas di kolam renang.', cta: 'Tanya Kolam Renang', message: 'Halo Kampung Pago, saya ingin informasi fasilitas kolam renang.', icon: '<path d="M2 17c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1M3 12c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1"/><path d="M7 9V5a2 2 0 1 1 4 0M17 9V5a2 2 0 1 1 4 0"/>' },
+  { name: 'Outbound Arena', description: 'Area aktivitas bersama untuk keluarga, komunitas, atau tim.', cta: 'Tanya Outbound', message: 'Halo Kampung Pago, saya ingin informasi kegiatan dan fasilitas Outbound Arena.', icon: '<path d="M12 22v-8M5 22h14M12 14 5 7l7-5 7 5-7 7ZM5 7l7 2 7-2"/>' },
 ];
 
 const bookingLinks = [
@@ -55,7 +55,6 @@ let activePhotoIndex = 0;
 galleryGrid.innerHTML = galleryPhotos.map((photo, index) => `
   <button class="gallery-photo" type="button" data-photo-index="${index}" aria-label="Buka foto: ${photo.caption}" ${index > 4 ? 'hidden' : ''}>
     <img src="${photo.src}" alt="${photo.alt}" width="${photo.width}" height="${photo.height}" loading="lazy" />
-    <span>${photo.caption}</span>
   </button>
 `).join('');
 

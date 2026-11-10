@@ -35,7 +35,6 @@
 .gallery-photo:first-child{grid-column:span 2;grid-row:span 2}
 .gallery-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
 .gallery-photo:hover img{transform:scale(1.025)}
-.gallery-photo::after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,#1119)}
 .gallery-photo>span{position:absolute;z-index:1;left:13px;bottom:12px;color:#fff;font-size:12px;font-weight:500;text-shadow:0 1px 5px #0008}
 .gallery-lightbox{position:fixed;width:min(1000px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:54px 58px 18px;border:0;border-radius:16px;background:#171715;color:#fff;overflow:visible}
 .gallery-lightbox::backdrop{background:rgba(15,12,12,.82)}
@@ -139,17 +138,21 @@ body{background:#fff;color:#000}
 }
 @media(max-width:700px){
   .wrap{width:min(calc(100% - 36px),540px)}
-  .hero{width:100%;padding:26px 18px 40px;gap:24px}
+  .hero{width:100%;grid-template-columns:minmax(0,1fr);padding:26px 18px 40px;gap:24px}
   .hero h1{font-size:clamp(42px,11vw,54px);margin:14px 0 10px}
   .hero-description{font-size:16px;line-height:1.6}
-  .hero-actions{margin-top:22px;gap:7px}
-  .hero-actions .button{min-height:50px;padding-inline:14px;font-size:12px}
+  .hero-copy{min-width:0;width:100%}
+  .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);margin-top:22px;gap:8px}
+  .hero-actions .button{width:100%;min-width:0;min-height:50px;padding:12px 14px;font-size:clamp(12px,3.4vw,15px);line-height:1.5;text-align:center}
+  .hero-actions .button svg,.hero-actions .button span{flex-shrink:0}
   .hero-art{aspect-ratio:1.27;border-radius:5px 42px 5px 5px}
   .hero-note{margin-top:22px;font-size:11px}
   .section{padding-top:58px;padding-bottom:54px}
   .section-heading{margin-bottom:22px}
   .section-heading h2{font-size:27px}
   .section-intro{font-size:13px}
+  .services-grid{grid-template-columns:minmax(0,1fr)}
+  .services-grid .service-card{grid-column:1/-1;min-height:160px}
   .gallery-inner{padding-top:52px;padding-bottom:50px}
   .contact-inner{padding-top:48px;padding-bottom:48px}
   .location-section{padding-top:40px;padding-bottom:20px}
@@ -159,7 +162,7 @@ body{background:#fff;color:#000}
 @media(max-width:380px){
   .wrap{width:calc(100% - 32px)}
   .hero{padding-inline:16px}
-  .hero-actions .button{font-size:11px;padding-inline:11px}
+  .hero-actions .button{padding-inline:11px}
 }
 .hero-art{isolation:isolate;min-width:0;background:#fff}
 .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%}
