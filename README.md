@@ -24,3 +24,4 @@ Buka `http://localhost:8000`. Hentikan server dengan `Ctrl+C`.
 - Domain deployment, canonical URL, dan gambar Open Graph belum diisi karena domain serta foto belum tersedia.
 
 Styling berada di `styles.css`. Warna brand utama `#A8060E`; antarmuka memakai fallback system sans-serif jika Google Fonts tidak dapat diakses.
+# KampungPago
