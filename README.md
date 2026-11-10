@@ -12,6 +12,10 @@ python3 -m http.server 8000
 
 Buka `http://localhost:8000`. Hentikan server dengan `Ctrl+C`.
 
+## Deployment Vercel
+
+Hubungkan repositori GitHub dan gunakan branch produksi `main`, dengan Root Directory pada root repositori. `vercel.json` memilih preset Other, melewati instalasi/build, dan menetapkan Output Directory ke `.` agar `index.html`, CSS, JavaScript, dan aset terunggah bersama. Tanpa konfigurasi ini, keberadaan folder `public` membuat Vercel hanya menyajikan folder tersebut dan halaman utama menjadi 404.
+
 ## Konten dan aset
 
 - Nomor WhatsApp, pesan setiap layanan, dan tujuh kanal booking ada di `app.js`.
